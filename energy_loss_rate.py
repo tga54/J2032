@@ -31,10 +31,12 @@ def ic_bE(Ee, photon_field):
     return bE
 
 def syn_bE(Ee, B):
+    """
     ### This function calculates the energy loss rate of synchrotron mechanism.
     >>> Ee: energy of electrons (unit: eV) while 
     >>> B: magnetic field strength
     ### return energy loss rate(erg s**-1) 
+    """
     sigma_T = const.sigma_T.cgs.value
     c = const.c.cgs.value
     a2 = 4/3 *sigma_T *c / (0.511e6)**2
