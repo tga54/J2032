@@ -14,9 +14,13 @@ from matplotlib import pyplot as plt
 
 
 def ic_bE(Ee, photon_field):
-### This function calculates the energy loss rate of inverse Compton mechanism. Ee is the
-### energy of electrons (unit: eV) while photon_field is the properties of scattered photons.
-    U_ph, T_ph = photon_field             # erg cm**-3, K
+    """
+    ### This function calculates the energy loss rate of inverse Compton mechanism.
+    >>> Ee: energy of electrons (unit: eV) while 
+    >>> photon_field: energy density (erg cm**-3) and temperature (K) of scattered photons.
+    ### return energy loss rate(erg s**-1) 
+    """
+    U_ph, T_ph = photon_field            
 ### define some constants
     sigma_T = const.sigma_T.cgs.value
     c = const.c.cgs.value
@@ -27,8 +31,10 @@ def ic_bE(Ee, photon_field):
     return bE
 
 def syn_bE(Ee, B):
-### This function calculates the energy loss rate of synchrotron mechanism.
-### Ee is the energy of electrons (unit: eV) while B is the magnetic field strength (G).
+    ### This function calculates the energy loss rate of synchrotron mechanism.
+    >>> Ee: energy of electrons (unit: eV) while 
+    >>> B: magnetic field strength
+    ### return energy loss rate(erg s**-1) 
     sigma_T = const.sigma_T.cgs.value
     c = const.c.cgs.value
     a2 = 4/3 *sigma_T *c / (0.511e6)**2
